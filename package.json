@@ -4,17 +4,26 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "Layout": "vue serve ./src/components/Layout/test.vue",
+    "RightList": "vue serve ./src/views/Blog/components/RightList-test.vue",
+    "DataTest": "vue serve ./src/components/MessageArea/DataTest.vue"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "highlight.js": "^10.7.3",
+    "mockjs": "^1.1.0",
+    "querystring": "^0.2.0",
+    "vue": "^2.6.11",
+    "vue-router": "^3.5.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack-bundle-analyzer": "^4.4.2"
   }
 }
