@@ -5,7 +5,7 @@ import Message from "@/views/Message"
 import Project from "@/views/Project"
 import BlogDetail from "@/views/Blog/Detail"
 export default [
-    { name: "Home", path: "/", component: Home },
+    { name: "Home", path: "/", component: Home, title: "个人博客" },
     { name: "About", path: "/about", component: About },
     { name: "Blog", path: "/article", component: Blog },
     { name: "categoryId", path: "/article/cate/:categoryId", component: Blog },

@@ -24,3 +24,8 @@ new Vue({
 
 
 //测试代码
+
+import { getSettings } from "./api/setting"
+	getSettings().then(res=>{
+		console.log(res)
+	})
