@@ -1,15 +1,65 @@
-import Home from "@/views/Home"
-import About from "@/views/About"
-import Blog from "@/views/Blog"
-import Message from "@/views/Message"
-import Project from "@/views/Project"
-import BlogDetail from "@/views/Blog/Detail"
+import Home from "@/views/Home";
+import About from "@/views/About";
+import Blog from "@/views/Blog";
+import Message from "@/views/Message";
+import Project from "@/views/Project";
+import BlogDetail from "@/views/Blog/Detail";
 export default [
-    { name: "Home", path: "/", component: Home, title: "个人博客" },
-    { name: "About", path: "/about", component: About },
-    { name: "Blog", path: "/article", component: Blog },
-    { name: "categoryId", path: "/article/cate/:categoryId", component: Blog },
-    { name: "BlogDetail", path: "/article/:id", component: BlogDetail },
-    { name: "Message", path: "/message", component: Message },
-    { name: "Project", path: "/project", component: Project }
-]
+  {
+    name: "Home",
+    path: "/",
+    component: Home,
+    title: "个人博客",
+    meta: {
+      title: "首页",
+    },
+  },
+  {
+    name: "About",
+    path: "/about",
+    component: About,
+    meta: {
+      title: "关于我",
+    },
+  },
+  {
+    name: "Blog",
+    path: "/article",
+    component: Blog,
+    meta: {
+      title: "文章",
+    },
+  },
+  {
+    name: "categoryId",
+    path: "/article/cate/:categoryId",
+    component: Blog,
+    meta: {
+      title: "分类",
+    },
+  },
+  {
+    name: "BlogDetail",
+    path: "/article/:id",
+    component: BlogDetail,
+    meta: {
+      title: "详情",
+    },
+  },
+  {
+    name: "Message",
+    path: "/message",
+    component: Message,
+    meta: {
+      title: "留言板",
+    },
+  },
+  {
+    name: "Project",
+    path: "/project",
+    component: Project,
+    meta: {
+      title: "项目&效果",
+    },
+  },
+];

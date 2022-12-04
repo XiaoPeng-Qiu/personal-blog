@@ -4,19 +4,19 @@
         <li>
         <a>
           <Icon type="github" />
-          <span class="contact-span">luckydog-qiuxiaopeng</span>
+          <span class="contact-span">{{data && data.githubName}}</span>
         </a>
       </li>
       <li>
-        <a href="mailto:qiuxiaopeng1216@gmail.com">
+        <a :href="`mailto:${data && data.mail}`">
           <Icon type="mail" />
-          <span class="contact-span">qiuxiaopeng..@gmail.com</span>
+          <span class="contact-span">{{data && data.mail}}</span>
         </a>
       </li>
       <li>
-        <a href="tencent://message/?Menu=yes&uin=1113090831&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a595b1714f9d45">
+        <a :href="`tencent://message/?Menu=yes&uin=${data && data.mail}&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a595b1714f9d45`">
           <Icon type="qq" />
-          <span class="contact-span">1113090831</span>
+          <span class="contact-span">{{data && data.qq}}</span>
         </a>
         <div class="contact-eject">
           <img src="../../../img/qrcode_gimg2.baidu.com.png" alt="" />
@@ -25,7 +25,7 @@
       <li>
         <a>
           <Icon type="weixin" />
-          <span class="contact-span">weixin</span>
+          <span class="contact-span">{{data && data.weixin}}</span>
         </a>
         <div class="contact-eject">
           <img src="../../../img/qrcode_gimg2.baidu.com.png" alt="" />
@@ -37,10 +37,14 @@
 
 <script>
 import Icon from "@/components/Icon";
+import { mapState } from "vuex"
 export default {
   components: {
     Icon,
   },
+  computed: {
+    ...mapState("settings",["data"])
+  }
 };
 </script>
 

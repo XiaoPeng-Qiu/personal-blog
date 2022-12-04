@@ -3,10 +3,10 @@
         <div class="avatar">
             <Avatar url="https://avatars.githubusercontent.com/u/81463076?v=4"/>
         </div>
-        <h1 class="title">打工人打工魂</h1>
+        <h1 class="title">{{data && data.siteTitle}}</h1>
         <Menu />
         <Contact />
-        <p class="footer">备案号：974829@949284</p>
+        <p class="footer">备案号：{{data && data.icp}}</p>
     </div>
 </template>
 
@@ -14,13 +14,16 @@
 import Avatar from "@/components/Avatar";
 import Contact from "./Contact";
 import Menu from "./Menu";
-
+import { mapState } from "vuex"
 export default {
     components: {
         Avatar,
         Contact,
         Menu
-    }
+    },
+    computed :{
+        ...mapState('settings',['data'])
+    },
 }
 </script>
 

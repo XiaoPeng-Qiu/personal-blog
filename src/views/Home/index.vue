@@ -1,5 +1,5 @@
 <template>
-  <div class="home-container" @wheel="handleWheel" v-loading = "isLoading">
+  <div class="home-container" @wheel="handleWheel" v-loading = "loading">
     <ul
       class="Carousel-img"
       ref="container"
@@ -39,11 +39,12 @@
 
 <script>
 import Carouselitem from "./Carouselitem.vue";
-import { getBanners } from "@/api/banner";
+// import { getBanners } from "@/api/banner";
 import Icon from "@/components/Icon";
-import fetchData from "@/mixins/fetchData"
+// import fetchData from "@/mixins/fetchData"
+import { mapState } from "vuex"
 export default {
-  mixins:[fetchData([])],
+  // mixins:[fetchData([])],
   components: {
     Carouselitem,
     Icon,
@@ -54,6 +55,9 @@ export default {
       containerHeight: 0,
       switching: false,
     };
+  },
+  created(){
+    this.$store.dispatch("banner/fetchBanner");
   },
   mounted() {
     this.containerHeight = this.$refs.container.clientHeight;
@@ -93,14 +97,15 @@ export default {
     handleResize() {
       this.containerHeight = this.$refs.container.clientHeight;
     },
-    async fetchData(){
-     return await getBanners();
-    }
+    // async fetchData(){
+    //  return await getBanners();
+    // }
   },
   computed: {
     marginTop() {
       return -this.index * this.containerHeight + "px";
     },
+    ...mapState("banner",["loading","data"])
   },
 };
 </script>

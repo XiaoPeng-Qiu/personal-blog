@@ -10,6 +10,9 @@ import loading from "./directives/loading"
 import lazy from './directives/lazy'
 //注册全局事件总线
 import "./eventBus";
+// 引入vuex
+import store from "./store/index"
+store.dispatch('settings/fetchSetting')
 
 Vue.prototype.$showMessage = showMessage;
 
@@ -19,13 +22,14 @@ Vue.directive("lazy",lazy);
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')
 
 
 //测试代码
 
-import { getSettings } from "./api/setting"
-	getSettings().then(res=>{
-		console.log(res)
-	})
+// import { getSettings } from "./api/setting"
+// 	getSettings().then(res=>{
+// 		console.log(res)
+// 	})
